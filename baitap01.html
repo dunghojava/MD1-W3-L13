@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 id="rs1"></h3>
+<input id="st2" type="number"><button onclick="bai02();">Kiem tra</button>
+<h3 id="rs2"></h3>
+<br><br>
+<input id="st3" type="text"><button onclick="bai03();">Click here</button>
+<h3 id="rs3"></h3>
+<script>
+    //bai 01
+    let myColor = ["Red", "Green", "White", "Black"];
+    document.getElementById('rs1').innerHTML = myColor.join();
+    //bai 02
+    function bai02() {
+        let num = document.getElementById('st2').value;
+        let str = num.toString();
+        let result = [str[0]];
+
+        for (let x = 1; x < str.length; x++) {
+            if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
+                result.push('-', str[x]);
+            } else {
+                result.push(str[x]);
+            }
+        }
+        document.getElementById('rs2').innerHTML = result.join('');
+    }
+    //bai 03
+    function bai03() {
+        let str = document.getElementById('st3').value;
+        let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        let result = [];
+
+        for (let x = 0; x < str.length; x++) {
+            if (UPPER.indexOf(str[x]) !== -1) {
+                result.push(str[x].toLowerCase());
+            } else if (LOWER.indexOf(str[x]) !== -1) {
+                result.push(str[x].toUpperCase());
+            } else {
+                result.push(str[x]);
+            }
+        }
+        document.getElementById('rs3').innerHTML = result.join('');
+    }
+
+</script>
+</body>
+</html>
