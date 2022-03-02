@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input id="st1" type="text">
+<button onclick="trans();">Translate</button>
+<br>
+<h3 id="rs"></h3>
+<script>
+    function trans() {
+        let english = ['hello', 'good bye', 'thank you', 'morning', 'evening'];
+        let vietnam = ['xin chào', 'tạm biệt', 'cảm ơn', 'buổi sáng', 'buổi tối'];
+        let str = document.getElementById('st1').value;
+        let words = str.toString();
+        for (let i = 0; i < 5; i++) {
+            if (words === english[i]) {
+                document.write(vietnam[i]);
+            }
+            if (words === vietnam[i]) {
+                document.write(english[i]);
+            }
+        }
+    }
+</script>
+</body>
+</html>
