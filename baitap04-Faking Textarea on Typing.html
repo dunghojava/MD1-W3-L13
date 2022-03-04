@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Type anything slowly</h1>
+<textarea name="nhap" id="st1" cols="30" rows="10" onkeydown="type()"></textarea>
+<script>
+    function type() {
+        let text = document.getElementById('nhap').value;
+        let newarray = "";
+        let array = ['H','O',' ','A','N','H',' ','D','U','N','G'];
+        for (let i = 0; i < text.length; i++) {
+            newarray += array[i];
+        }
+        document.getElementById('st1').value = newarray;
+    }
+</script>
+</body>
+</html>

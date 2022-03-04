@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<textarea id="rs" style="width: 500px; height: 200px" onkeydown="tinh();"></textarea>
+
+
+</body>
+</html>
+<script>
+    let a = " Toi la do ngoc!!!";
+    let arr = [];
+    arr = a.split("");
+    let str = "";
+    function tinh() {
+        let txt = document.getElementById("rs").value;
+        for (let i = 0; i < txt.length;i++) {
+            str = str + arr[i];
+            if (i==18) {
+                str = "";
+            }
+        }
+        document.getElementById("rs").value = str;
+        str = "";
+        setTimeout(tinh,1000)
+    }
+</script>
